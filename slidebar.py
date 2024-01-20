@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
 import time
-
 plt.style.use('ggplot')
 
 data = {
@@ -13,26 +12,24 @@ data = {
 }
 
 rad = st.sidebar.radio('Navigation',['Home','About Us'])
+
 if rad == 'Home':
-    df = pd.DataFrame(data = data)
+    df = pd.DataFrame(data=data)
 
-    # adding widget
-    st.sidebar.selectbox('Select a number ',[1,2,3,4,5])
-
-    col = st.sidebar.multiselect('Select a Column',df.columns)
-
+    col = st.sidebar.multiselect('Selcet a Number',df.columns)
     plt.plot(df['num'],df[col])
     st.pyplot()
-
 if rad == 'About Us':
+    st.write('You are here in about this page')
+    
     progress = st.progress(0)
     for i in range(100):
-        time.sleep(0.1)
+        time.sleep(0.05)
         progress.progress(i+1)
+    st.balloons()
     
-    st.write('You are here in about us page')
     st.error('Error')
-    st.success('Show Sucess')
+    st.success('Success')
     st.info('Information')
-    st.exception(RuntimeError('This is an Error'))
-    st.warning('This is a warning')
+    st.exception(RuntimeError('This is an error'))
+    st.warning('Warning')

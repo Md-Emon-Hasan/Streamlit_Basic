@@ -1,43 +1,31 @@
 import streamlit as st
 
-st.title("Hello Streamlit")
+st.title('Hello Streamlit')
+st.header('Header')
+st.subheader('Sub header')
 
-st.header("Header")
+st.text('Like this video and subscribe to this channel')
 
-st.subheader("Sub Header")
+st.markdown('''
+## This is h2 tag
+### This is h3 tag
+:moon:
+:sunglasses:
+:heart: 
+''')
 
-st.text("like this video and subscribe to the channel")
+st.markdown('''
+**This is bold text** </br>
+__This is italic text__            
+''',True)
 
-st.markdown("""
-# h1 tag
-## h2 tag
-### h3 tag
-""")
+st.write('Emon Hasan is a machine learning engineer')
 
-st.markdown("""
-:moon:<br>
-:sunglasses:<br>
-:heart:
-""",True)
-
-st.markdown("""
-**this is bold text**<br>
-__this is italic text__
-""",True)
-
-st.write('Emon Hasan','is a','Data Scientist')
-
-st.latex(r''' a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
-     \sum_{k=0}^{n-1} ar^k =
-     a \left(\frac{1-r^{n}}{1-r}\right)''')
-
-st.write('# Emon Hasan is a Machine Learning Engineer')
-
-st.write(st)
+st.latex(r''' a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} = \sum_{k=0}^{n-1} ar^k = a \left(\frac{1-r^{n}}{1-r}\right)''')
 
 d = {
-    'name':'emon',
-    'language':'python',
-    'expert':'Machine Learning'
+    'name':'Emon',
+    'language':'Python',
+    'topic':'Data Science'
 }
 st.write(d)

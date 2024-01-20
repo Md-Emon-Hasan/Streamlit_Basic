@@ -5,13 +5,13 @@ from plotly import graph_objs as go
 from sklearn.linear_model import LinearRegression
 import numpy as np 
 
-data = pd.read_csv("Salary_Data.csv")
+data = pd.read_csv("C:/Users/emon1/OneDrive/Desktop/Streamlit Basic/Salary_Data.csv")
 x = np.array(data['YearsExperience']).reshape(-1,1)
 lr = LinearRegression()
 lr.fit(x,np.array(data['Salary']))
 
 st.title("Salary Predictor")
-st.image("sal.png",width = 800)
+
 nav = st.sidebar.radio("Navigation",["Home","Prediction","Contribute"])
 if nav == "Home":
     if st.checkbox("Show Table"):
